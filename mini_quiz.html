@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .quiz-container { max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 10px #aaa; }
+        .question { font-size: 18px; margin-bottom: 10px; }
+        .options button { display: block; width: 100%; padding: 10px; margin: 5px 0; border: none; background: #007BFF; color: white; font-size: 16px; cursor: pointer; border-radius: 5px; }
+        .options button:hover { background: #0056b3; }
+        #result { font-size: 20px; margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Mini-Quiz</h1>
+    <div class="quiz-container">
+        <div id="question" class="question">Hva er hovedstaden i Norge?</div>
+        <div class="options">
+            <button onclick="checkAnswer('A')">A) Stockholm</button>
+            <button onclick="checkAnswer('B')">B) Oslo</button>
+            <button onclick="checkAnswer('C')">C) København</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswer(answer) {
+            if (answer === 'B') {
+                document.getElementById('result').innerText = 'Riktig! 🎉';
+                document.getElementById('result').style.color = 'green';
+            } else {
+                document.getElementById('result').innerText = 'Feil, prøv igjen! ❌';
+                document.getElementById('result').style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
